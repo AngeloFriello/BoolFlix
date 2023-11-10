@@ -28,9 +28,10 @@
                     }
                 })
                 .then(res=>{
-                const movie = res.data
-                this.store.movie = movie
-            })
+                    console.log(res);
+                    const movies = res.data
+                    this.store.movies = movies
+                })
             }
         },
         created(){
@@ -40,21 +41,15 @@
 </script>
 
 <template>
-
-    <body>
-        <div id="app">
-            <header>
-                <HeaderApp @search="searchMovie"/>
-            </header>
-            <main>
-                <MainApp/>
-            </main>
-            <footer>
-                <FooterApp/>
-            </footer>
-        </div>
-    </body>
-
+    <header>
+        <HeaderApp @search="searchMovie"/>
+    </header>
+    <main>
+        <MainApp/>
+    </main>
+    <footer>
+        <FooterApp/>
+    </footer>
 </template>
 
 <style>

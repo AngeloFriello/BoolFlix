@@ -3,7 +3,7 @@
     export default {
         data(){
             return{
-                textsearch:'',
+                store: store,
             }
         }
     }
@@ -11,9 +11,7 @@
 
 <template>
     <div class="ricerca">
-        <input type="text" v-model="textsearch" placeholder="cerca">
-        <p>{{ textsearch }}</p>
-        <button class="button" @click="$emit('search', textsearch)"></button>
+        <input type="text" v-model="store.searchText" placeholder="cerca" @keyup.enter="$emit('search')">     
     </div>
 </template>
 
