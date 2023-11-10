@@ -15,16 +15,45 @@
         data() {
             return{
                 store: store,
-
+                productsUrl:'https://api.themoviedb.org/3/search/tv',
+                query: 'Ritorno al Futuro',
+            }
+        },
+        methods:{
+            searchMovie(){
+                axios.get(this.productsUrl,{
+                    params:{
+                        'api_key': this.store.apiKey,
+                        'query': this.store.searchText,
+                    }
+                })
+                .then(res=>{
+                const movie = res.data
+                this.store.movie = movie
+            })
             }
         },
         created(){
-
+ 
         },
     } 
 </script>
 
 <template>
+
+    <body>
+        <div id="app">
+            <header>
+                <HeaderApp @search="searchMovie"/>
+            </header>
+            <main>
+                <MainApp/>
+            </main>
+            <footer>
+                <FooterApp/>
+            </footer>
+        </div>
+    </body>
 
 </template>
 
