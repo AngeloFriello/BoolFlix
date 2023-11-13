@@ -1,13 +1,17 @@
 <script>
     import { store } from '../store';
-    import AppCardFilm from './AppCardFilm.vue';
-    import AppCardSeries from './AppCardSeries.vue';
+    import AppCard from './AppCard.vue';
+
     export default {
     props: {
-        movies: {
+        item: {
             type: Object,
             required: true,
-        }
+        },
+        series:{
+            type: Object,
+            required: true,
+        },
     },
     data() {
         return {
@@ -15,7 +19,7 @@
         };
     },
     components: 
-    { AppCardFilm, AppCardSeries}
+    { AppCard }
    
 
 }
@@ -24,19 +28,13 @@
 <template>
     <div class="container">
         <div>
-            <h2>SERIE</h2>
+            <h2 class="section">SERIE TV e FILM</h2>
             <ul class="grid">
                 <li v-for="(movie , index) in store.movies.results" :key="index" class="card">
-                    <AppCardFilm :movie="movie" />
+                    <AppCard :item="movie" />
                 </li>
-            </ul>
-        </div>
-     
-        <div>
-            <h2>FILM</h2>
-            <ul class="grid">
                 <li v-for="(serie , index) in store.series.results" :key="index" class="card">
-                    <AppCardSeries :serie="serie" />
+                    <AppCard :item="serie" />
                 </li>
             </ul>
         </div>

@@ -2,8 +2,7 @@
     import HeaderApp from './components/HeaderApp.vue';
     import MainApp from './components/MainApp.vue';
     import FooterApp from './components/FooterApp.vue';
-    import AppCardFilm from './components/AppCardFilm.vue';
-    import AppCardSeries from './components/AppCardSeries.vue';
+    import AppCard from './components/AppCard.vue';
     import { store } from './store.js';
     import axios from 'axios';
 
@@ -12,6 +11,7 @@
             HeaderApp,
             MainApp,
             FooterApp,
+            AppCard,
         },
         data() {
             return{
