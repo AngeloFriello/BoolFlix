@@ -52,19 +52,48 @@ main{
     color: white;
     padding: 40px;
 
+    .flex{
+        display: flex;
+    }
+
     .container{
-        max-width: 1800px;
+        max-width: 2800px;
         margin: 0 auto;
     }
     
     .card{
-        max-width: 200px;
+        width: 342px;
+        height: 510px;
     }
 
     .grid{
         display: grid;
-        grid-template-columns: repeat(8,1fr);
+        grid-template-columns: repeat(7,1fr);
         gap: 40px;
+    }
+
+    .info{
+        display: none;
+    }
+
+    .card:hover .cover{
+        display: none;
+        
+    }
+
+    .card:hover .info{
+        display: inline;
+    }
+
+    .card:hover{
+        background-color: black;
+        padding: 40px;
+        border: 2px solid white;
+    }
+
+    .star{
+        color: yellow;
+
     }
 }
 

@@ -16,39 +16,27 @@
             srcFlag(){
                 return this.store.flags[this.movie.original_language]
             }
-        },
-        methods:{
-            star(){
-                for(let i = 0; i = (Math.round(this.movie.vote_average) / 2); i++){
-                    `<font-awesome-icon :icon="['fas', 'star']" />`
-                }
-            }
         }
     }
 </script>
 
 <template> 
-    <ul>
-        <li><img :src="`https://image.tmdb.org/t/p/w200${movie.poster_path}`" alt=""></li>
-        <li>{{ movie.original_name }}</li>
-        <li>{{ movie.name }}</li>
-        <div class="flex">
-            <li v-for="star of (Math.round(movie.vote_average / 2))"><font-awesome-icon :icon="['fas', 'star']" /></li>
-            <li v-for="star of (5 - (Math.round(movie.vote_average / 2)))"><font-awesome-icon :icon="['far', 'star']" /></li>
-        </div>
-        
-            
-   
-        
-        <div class="flags">
-            <li>
-                <img height="20" v-if="srcFlag" :src="srcFlag" alt="">
-                <p v-else>{{ movie.original_language }}</p>
-            </li>
-        </div> 
+        <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" alt="" class="cover">
+    <ul class="info">    
+        <li>Nome Originale : {{ movie.original_name }}</li>
+        <li>Nome : {{ movie.name }}</li>
+        <li class="flex">
+            <p>Voto :</p> 
+            <p v-for="star of (Math.round(movie.vote_average / 2))"><font-awesome-icon :icon="['fas', 'star']"  class="star"/></p>
+            <p v-for="star of (5 - (Math.round(movie.vote_average / 2)))"><font-awesome-icon :icon="['far', 'star']" /></p>
+        </li>
+        <li class="flag">
+            <img height="40" v-if="srcFlag" :src="srcFlag" alt="">
+            <p v-else>{{ movie.original_language }}</p>  
+        </li> 
     </ul>
 </template>
 
-<style>
-    
+<style lang="scss">
+    @use '../style/general.scss';
 </style>

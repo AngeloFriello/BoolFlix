@@ -36,7 +36,7 @@
             <h2>FILM</h2>
             <ul class="grid">
                 <li v-for="(serie , index) in store.series.results" :key="index" class="card">
-                    <AppCardSeries :serie="serie" />          
+                    <AppCardSeries :serie="serie" />
                 </li>
             </ul>
         </div>
