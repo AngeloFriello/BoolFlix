@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+// reset
+
 li,ul{
     list-style: none;
 }
@@ -13,16 +15,50 @@ a{
     color: currentColor;
 }
 
-.container{
-    max-width: 1800px;
-    margin: 0 auto;
+
+header{
+
+    background-color: black;
+    padding: 40px;
+    display: flex;
+
+    
+    .button{
+        background-color: red;
+        width: 20px;
+        height: 20px;
+        margin: 10px;
+    }
+
+    .search{
+        width: 300px;
+        padding: 10px;
+        font-size: 25px;
+    }
+
+    .title{
+        margin: 0 auto;
+        color: red;
+        font-size: 50px;
+    }
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: repeat(8,1fr);
-    gap: 40px;
+
+main{
+
+    background-color: rgb(10, 10, 24);
+    color: white;
+    padding: 40px;
+
+    .container{
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+    
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        gap: 40px;
+    }
 }
-
-
 
