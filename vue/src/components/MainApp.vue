@@ -24,7 +24,7 @@
 <template>
     <div class="container">
         <div>
-            <h2>FILM</h2>
+            <h2>SERIE</h2>
             <ul class="grid">
                 <li v-for="(movie , index) in store.movies.results" :key="index" class="card">
                     <AppCardFilm :movie="movie" />
@@ -33,7 +33,7 @@
         </div>
      
         <div>
-            <h2>SERIE</h2>
+            <h2>FILM</h2>
             <ul class="grid">
                 <li v-for="(serie , index) in store.series.results" :key="index" class="card">
                     <AppCardSeries :serie="serie" />          
