@@ -17,6 +17,30 @@
             srcFlag(){
                 return this.store.flags[this.item.original_language]
             },
+            original_name(){
+                if(this.item.original_title){
+                    return this.item.original_title
+                }
+                else{
+                    return this.item.original_name
+                }
+            },
+            name(){
+                if(this.item.title){
+                    return this.item.title
+                }
+                else{
+                    return this.item.name
+                }
+            },
+            date(){
+                if(this.item.release_date){
+                    return this.item.release_date
+                }
+                else{
+                    return this.item.first_air_date
+                }
+            }
         },
         
     }
@@ -25,10 +49,10 @@
 <template>
     <img  :src="`https://image.tmdb.org/t/p/w342${item.poster_path}`" alt="" class="cover">
     <ul class="info">
-        <li >Nome Originale : {{ item.original_title }} {{ item.original_name }}</li>
-        <li>Nome : {{ item.title }} {{ item.name }}</li>
+        <li >Nome Originale : {{ original_name }}</li>
+        <li>Nome : {{ name }}</li>
         <!-- <li>Descrizione : {{ item.overview }}</li> -->
-        <li>{{ item.release_date }} {{ item.first_air_date }}</li>
+        <li>{{ date }} </li>
         <li class="flex">
             <p>>Voto :</p>
             <p v-for="star of (Math.round(item.vote_average / 2))"><font-awesome-icon :icon="['fas', 'star']" class="star"/></p>
