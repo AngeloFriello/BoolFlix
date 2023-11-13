@@ -10,7 +10,6 @@
         data(){
             return{
                 store: store,
-                language:[],
             }
         },
         computed:{
@@ -18,25 +17,16 @@
                 return this.store.flags[this.movie.original_language]
             }
         }
-        // mounted:{
-        //     flag(boolean){
-        //         if(movie.original_language.toLowerCase().icludes('it'.toLowerCase())){
-        //             return
-        //             boolean === true
-        //         }else{
-        //             return
-        //             boolean === false
-        //         }
-        //     }
-        // }
     }
 </script>
 
-<template>
+<template> 
     <ul>
+        <li><img :src="`https://image.tmdb.org/t/p/w200${movie.poster_path}`" alt=""></li>
         <li>{{ movie.original_name }}</li>
         <li>{{ movie.name }}</li>
         <li>{{ movie.vote_average }}</li>
+        
         <div class="flags">
             <li>
                 <img height="20" v-if="srcFlag" :src="srcFlag" alt="">
