@@ -18,8 +18,8 @@
 </script>
 
 <template>
-    <div>
-        <ul>
+    <div class="container">
+        <ul class="grid">
             <li v-for="(movie , index) in store.movies.results" :key="index">
                 <AppCard :movie="movie" />
             </li>
@@ -27,6 +27,6 @@
     </div>
 </template>
 
-<style>
-
+<style lang="scss">
+    @use '../style/general.scss'
 </style>

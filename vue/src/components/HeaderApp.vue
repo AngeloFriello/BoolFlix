@@ -11,7 +11,7 @@
 
 <template>
     <div class="ricerca">
-        <input type="text" v-model="store.searchText" placeholder="cerca" @keyup.enter="$emit('search')">     
+        <input class="search" type="text" v-model="store.searchText" placeholder="cerca" @keyup.enter="$emit('search')">     
     </div>
 </template>
 
