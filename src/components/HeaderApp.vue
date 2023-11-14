@@ -11,14 +11,14 @@
 
 <template>
     
-    <h1 class="title">BOOLFLIX</h1>
+    <img src="../../public/BrandAssets_Logos_01-Wordmark.jpg" alt="" class="logo">
     <ul class="header_list">
         <li><a href=""> Serie TV</a></li>
         <li><a href=""> Film</a></li>
         <li><a href=""> Home</a></li>
         <li><a href=""> Originali</a></li>
         <li><a href=""> Aggiunti di Recente</a></li>
-        <li><a href=""> la mia lista</a></li>
+        <li><a href=""> La Mia Lista</a></li>
     </ul>
 
     <div>
