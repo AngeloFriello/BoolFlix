@@ -28,11 +28,16 @@
 <template>
     <div class="container">
         <div>
-            <h2 class="section">SERIE TV e FILM</h2>
+            <h2 class="section">Serie TV</h2>
             <ul class="grid">
                 <li v-for="(movie , index) in store.movies.results" :key="index" class="card">
                     <AppCard :item="movie" />
                 </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="section">Film</h2>
+            <ul class="grid">
                 <li v-for="(serie , index) in store.series.results" :key="index" class="card">
                     <AppCard :item="serie" />
                 </li>
